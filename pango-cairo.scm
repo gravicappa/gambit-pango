@@ -26,7 +26,7 @@ end-of-c
             PangoLayout*/g_object_unref
             "pango_cairo_create_layout"))
 
-(define show-layout
+(define show-layout!
   (c-lambda (cairo-t* PangoLayout*)
             void
             "pango_cairo_show_layout"))

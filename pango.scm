@@ -32,7 +32,7 @@ end-of-c
             PangoFontDescription*/pango_font_description_free
             "pango_font_description_from_string"))
 
-(define font-description-family-set!
+(define set-font-description-family!
   (c-lambda (PangoFontDescription* char-string)
             void
             "pango_font_description_set_family"))
@@ -83,44 +83,44 @@ end-of-c
 ;(define +pango-weight-ultraheavy+
 ;  ((c-lambda () PangoWeight "___result = PANGO_WEIGHT_ULTRAHEAVY;")))
 
-(define font-description-weight-set!
+(define set-font-description-weight!
   (c-lambda (PangoFontDescription* PangoWeight)
             void
             "pango_font_description_set_weight"))
 
-(define font-description-absolute-size-set!
+(define set-font-description-absolute-size!
   (c-lambda (PangoFontDescription* double)
             void
             "pango_font_description_set_absolute_size
               (___arg1, PANGO_SCALE * ___arg2);"))
 
-(define font-description-size-set!
+(define set-font-description-size!
   (c-lambda (PangoFontDescription* double)
             void
             "pango_font_description_set_size
               (___arg1, (int) (PANGO_SCALE * ___arg2));"))
 
-(define layout-font-description-set!
+(define set-layout-font-description!
   (c-lambda (PangoLayout* PangoFontDescription*)
             void
             "pango_layout_set_font_description"))
 
-(define layout-text-set!
+(define set-layout-text!
   (c-lambda (PangoLayout* UTF-8-string)
             void
             "pango_layout_set_text(___arg1, ___arg2, -1);"))
 
-(define layout-markup-set!
+(define set-layout-markup!
   (c-lambda (PangoLayout* UTF-8-string)
             void
             "pango_layout_set_markup(___arg1, ___arg2, -1);"))
 
-(define layout-width-set!
+(define set-layout-width!
   (c-lambda (PangoLayout* int)
             void
             "pango_layout_set_width(___arg1, PANGO_SCALE * ___arg2);"))
 
-(define layout-height-set!
+(define set-layout-height!
   (c-lambda (PangoLayout* int)
             void
             "pango_layout_set_height(___arg1, PANGO_SCALE * ___arg2);"))
@@ -148,7 +148,7 @@ end-of-c
             int
             "pango_layout_get_indent"))
 
-(define layout-indent-set!
+(define set-layout-indent!
   (c-lambda (PangoLayout* int)
             void
             "pango_layout_set_indent(___arg1, PANGO_SCALE * ___arg2);"))
